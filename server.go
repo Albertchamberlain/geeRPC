@@ -86,7 +86,7 @@ func (server *Server) ServeConn(conn io.ReadWriteCloser) {
 		log.Printf("rpc server: invalid codec type %s", opt.CodecType)
 		return
 	}
-	//
+	server.serverCodec(f(conn))
 }
 
 var invalidRequest = struct{}{}
